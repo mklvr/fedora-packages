@@ -46,6 +46,8 @@ Synchronous and asynchronous interfaces to xkcd comics
 %{_fixperms} $RPM_BUILD_ROOT/*
 
 %check
+# This test requires network access. Disable for Koji builds.
+%{?!_with_network_tests: rm t/sync.t }
 %{__make} test
 
 %files
