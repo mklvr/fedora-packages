@@ -4,29 +4,33 @@ Release:        1%{?dist}
 Summary:        A Mojolicious plugin that allows OAuth2 authentication
 
 License:        Artistic 2.0
-URL:            https://github.com/marcusramberg/Mojolicious-Plugin-OAuth2
-Source0:        https://github.com/marcusramberg/Mojolicious-Plugin-OAuth2/archive/%{version}/Mojolicious-Plugin-OAuth2-%{version}.tar.gz
+URL:            https://metacpan.org/release/Mojolicious-Plugin-OAuth2
+Source0:        https://cpan.metacpan.org/authors/id/M/MR/MRAMBERG/Mojolicious-Plugin-OAuth2-%{version}.tar.gz
 
 BuildArch:      noarch
 
 BuildRequires:  perl-generators
 BuildRequires:  perl-interpreter
+BuildRequires:  perl(Carp)
 BuildRequires:  perl(ExtUtils::MakeMaker) >= 6.76
+BuildRequires:  perl(File::Find)
 BuildRequires:  perl(IO::Socket::SSL)
-BuildRequires:  perl(Mojolicious) >= 7.53
-BuildRequires:  perl(lib)
 BuildRequires:  perl(Mojo::Base)
+BuildRequires:  perl(Mojo::Promise)
+BuildRequires:  perl(Mojo::UserAgent)
 BuildRequires:  perl(Mojo::Util)
+BuildRequires:  perl(Mojolicious) >= 7.53
 BuildRequires:  perl(Mojolicious::Lite)
-BuildRequires:  perl(Scalar::Util)
-BuildRequires:  perl(strict)
+BuildRequires:  perl(Mojolicious::Plugin)
 BuildRequires:  perl(Test::Mojo)
 BuildRequires:  perl(Test::More)
-BuildRequires:  perl(Test::Output) >= 1
+BuildRequires:  perl(lib)
+BuildRequires:  perl(strict)
 BuildRequires:  perl(warnings)
 
 Requires:  perl(IO::Socket::SSL)
 Requires:  perl(Mojolicious) >= 7.53
+Requires:  perl(Mojolicious::Plugin)
 
 %{?perl_default_filter}
 
