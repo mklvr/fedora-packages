@@ -3,7 +3,7 @@ Version:        0.009
 Release:        1%{?dist}
 Summary:        Synchronous and asynchronous interfaces to xkcd comics
 
-License:        GPLv1
+License:        GPL+ or Artistic
 URL:            https://metacpan.org/release/WWW-xkcd
 Source0:        https://cpan.metacpan.org/authors/id/X/XS/XSAWYERX/WWW-xkcd-%{version}.tar.gz
 
@@ -20,10 +20,6 @@ BuildRequires:  perl(strict)
 BuildRequires:  perl(Test::Fatal)
 BuildRequires:  perl(Test::More)
 BuildRequires:  perl(warnings)
-
-Requires:       perl(Carp)
-Requires:       perl(HTTP::Tiny)
-Requires:       perl(JSON::MaybeXS)
 Requires:       perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 
 Recommends:     perl(AnyEvent)
@@ -32,7 +28,13 @@ Recommends:     perl(AnyEvent::HTTP)
 %{?perl_default_filter}
 
 %description
-Synchronous and asynchronous interfaces to xkcd comics
+This module allows you to access xkcd comics (http://www.xkcd.com/) using
+the official API in synchronous mode (what people are used to) or in
+asynchronous mode.
+
+The asynchronous mode requires you have AnyEvent and AnyEvent::HTTP
+available. However, since it's just supported and not necessary, it is not
+declared as a prerequisite.
 
 %prep
 %setup -q -n WWW-xkcd-%{version}
